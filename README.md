@@ -2,7 +2,7 @@
 
 Aplicação web de delivery de bebidas com três perfis (cliente, vendedor e administrador), pedidos acompanhados **em tempo real** e API própria com banco de dados MySQL.
 
-🔗 **Demonstração online:** _(link do Railway a ser adicionado)_
+🔗 **Demonstração online:** _https://delivery-app-production-a0305b60.up.railway.app/login_
 
 **Contas de teste** (já cadastradas na demonstração):
 
