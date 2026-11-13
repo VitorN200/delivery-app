@@ -47,7 +47,7 @@ Requisitos: Node 14+ e MySQL.
 ```bash
 # Banco e API
 cd back-end
-cp .env.example .env    # se existir; defina as variáveis MYSQL_* (veja abaixo)
+cp .env.example .env    # ajuste as variáveis MYSQL_* (veja abaixo)
 npm install
 npm run db:reset        # cria o banco, as tabelas e os dados de exemplo
 npm start               # http://localhost:3001
