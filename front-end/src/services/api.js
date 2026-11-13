@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const URL_BASE = 'http://localhost:3001';
+// Em produção (Railway) a API está no mesmo domínio do front: REACT_APP_API_URL fica vazio.
+export const URL_BASE = process.env.REACT_APP_API_URL !== undefined
+  ? process.env.REACT_APP_API_URL : 'http://localhost:3001';
 
 export const register = async (name, email, password) => {
   const { data } = await axios({
