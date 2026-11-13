@@ -1,5 +1,7 @@
 import client from 'socket.io-client';
+import { URL_BASE } from '../services/api';
 
-const io = client('http://localhost:3001');
+// URL vazia = mesmo domínio da página.
+const io = client(URL_BASE || undefined);
 
 export default io;

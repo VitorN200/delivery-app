@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -29,6 +30,13 @@ app.use(cors({
 app.use('/', routes);
 
 app.get('/coffee', (_req, res) => res.status(418).end());
+
+// Em produção a própria API entrega o front-end já compilado (um serviço só).
+const frontBuild = path.resolve(__dirname, '..', '..', '..', 'front-end', 'build');
+if (fs.existsSync(frontBuild)) {
+  app.use(express.static(frontBuild));
+  app.get('*', (_req, res) => res.sendFile(path.join(frontBuild, 'index.html')));
+}
 
 app.use(middlewares.error);
 
